@@ -7,13 +7,13 @@ import {
   ArrowForward as ArrowForwardIcon,
 } from '@mui/icons-material';
 
-import { useCharacterContext } from 'context/character';
+import { useCharacterContext } from '@/context/character';
 
-import NotFound from 'components/NotFound';
-import LoadingCharacterGrid from 'components/LoadingCharacterGrid';
-import CharacterItem from 'components/CharacterItem';
+import NotFound from '@/components/NotFound';
+import LoadingCharacterGrid from '@/components/LoadingCharacterGrid';
+import CharacterItem from '@/components/CharacterItem';
 
-import rickAndMorty from 'assets/background.png';
+import rickAndMorty from '@/assets/background.png';
 
 import { BackgroundStripe, Form, Characters, PageTitle } from './styles';
 

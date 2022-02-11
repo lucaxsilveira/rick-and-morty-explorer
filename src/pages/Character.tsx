@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useCharacterContext } from 'context/character';
+import { useCharacterContext } from '@context/character';
 
 const Character = () => {
   const { id } = useParams<{ id: string }>();
