@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 
-import { Error } from "./styles";
+import { Error } from './styles';
 
-import error from "assets/not-found.png";
+import error from '@/assets/not-found.png';
 
 interface NotFoundProps {
-    message: string;
+  message: string;
 }
 
 const NotFound: React.FC<NotFoundProps> = ({ message }: NotFoundProps) => {
-    return (
+  return (
         <Error>
             <img src={error} alt="Not Found" />
             <p>{message}</p>
         </Error>
-    );
+  );
 };
 
 export default NotFound;

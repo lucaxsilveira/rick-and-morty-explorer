@@ -1,12 +1,17 @@
 const CracoAlias = require("craco-alias");
-const { ESLINT_MODES } = require("@craco/craco")
-const customESLintConfig = require('./.eslintrc');
+const path = require('path');
 
 module.exports = {
-    eslint: {
-        mode: ESLINT_MODES.extends,
-        configure: () => customESLintConfig,
-    },
+    plugins: [
+      {
+        plugin: CracoAlias,
+        options: {
+          source: 'tsconfig',
+          baseUrl: '.',
+          tsConfigPath: './tsconfig.path.json',
+        },
+      },
+    ],
     webpack: {
         alias: {
           '@': path.resolve(__dirname, 'src'),
