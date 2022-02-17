@@ -23,7 +23,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
-    "removeComments": true
+    "removeComments": true,
+    "useUnknownInCatchVariables": false
   },
   "include": [
     "src",

@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import { SearchStatus } from "iconsax-react";
+import { SearchStatus } from 'iconsax-react';
 
-import { Logo, Header } from "./styles";
+import { Logo, Header } from './styles';
 
 const MainLayout: React.FC = ({ children }) => {
-    return (
+  return (
         <div className="container">
             <Header>
                 <Logo>
@@ -18,7 +18,7 @@ const MainLayout: React.FC = ({ children }) => {
 
             {children}
         </div>
-    );
+  );
 };
 
 export default MainLayout;

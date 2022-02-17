@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { Box, Skeleton, Typography } from "@mui/material";
+import { Box, Skeleton, Typography } from '@mui/material';
 
 const LoadingCharacter: React.FC = () => {
-    return (
+  return (
         <Box display="flex">
             <Skeleton
                 component="div"
@@ -27,7 +27,7 @@ const LoadingCharacter: React.FC = () => {
                     <Skeleton width="60%" variant="text" />
                 </Typography>
 
-                <Box style={{ marginTop: "auto" }} display="flex">
+                <Box style={{ marginTop: 'auto' }} display="flex">
                     <Skeleton width="20px" height="20px" variant="text" />
                     <Skeleton
                         style={{ marginLeft: 8 }}
@@ -38,7 +38,7 @@ const LoadingCharacter: React.FC = () => {
                 </Box>
             </Box>
         </Box>
-    );
+  );
 };
 
 export default LoadingCharacter;

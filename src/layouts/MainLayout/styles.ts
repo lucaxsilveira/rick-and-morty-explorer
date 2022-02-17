@@ -1,10 +1,10 @@
-import { styled } from "@mui/system";
+import { styled } from '@mui/system';
 
-export const Header = styled("header")`
+export const Header = styled('header')`
     margin: 0 auto;
 `;
 
-export const Logo = styled("div")`
+export const Logo = styled('div')`
     display: flex;
     align-items: center;
 

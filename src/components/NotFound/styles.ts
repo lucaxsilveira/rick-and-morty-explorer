@@ -1,6 +1,6 @@
-import { styled } from "@mui/system";
+import { styled } from '@mui/system';
 
-export const Error = styled("span")`
+export const Error = styled('span')`
     display: block;
     margin-top: 8px;
     color: ${({ theme }) => theme.palette.error.main};

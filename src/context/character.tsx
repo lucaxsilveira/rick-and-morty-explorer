@@ -77,9 +77,9 @@ const defaultState = {
     created: '',
   },
   setCharacter: () => {},
-  searchByName: (name: string): void => {},
-  searchByPage: (page: string | number): void => {},
-  getById: (id: string): void => {},
+  searchByName: (): void => {},
+  searchByPage: (): void => {},
+  getById: (): void => {},
   loading: true,
   error: '',
 };
@@ -103,10 +103,10 @@ const CharacterContextProvider: React.FC = ({ children }) => {
       const { results = [], info = defaultState.pageInfo } = data;
       setCharacters(results);
       setPageInfo(info);
-    } catch (error: any) {
+    } catch ({ response = null }) {
       setCharacters(defaultState.characters);
-      if (error?.response.data.error) {
-        setError(error.response.data.error);
+      if (response && response.data.error) {
+        setError(response.data.error);
       }
     } finally {
       setLoading(false);
@@ -124,10 +124,10 @@ const CharacterContextProvider: React.FC = ({ children }) => {
         `https://rickandmortyapi.com/api/character/${id}`,
       );
       setCharacter(data);
-    } catch (error: any) {
+    } catch ({ response = null }) {
       setCharacter(defaultState.character);
-      if (error?.response.data.error) {
-        setError(error.response.data.error);
+      if (response && response.data.error) {
+        setError(response.data.error);
       }
       setLoading(false);
     }

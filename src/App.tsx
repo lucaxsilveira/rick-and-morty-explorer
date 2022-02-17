@@ -7,14 +7,15 @@ import GlobalStyle from './styles/global';
 import MainLayout from './layouts/MainLayout';
 import { theme } from './theme';
 
-const App = () => 
-    <ThemeProvider theme={theme}>
-      <AppContext>
-        <MainLayout>
-          <AppRoutes />
-        </MainLayout>
-      </AppContext>
-      <GlobalStyle />
-    </ThemeProvider>;
-  
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <AppContext>
+      <MainLayout>
+        <AppRoutes />
+      </MainLayout>
+    </AppContext>
+    <GlobalStyle />
+  </ThemeProvider>
+);
+
 export default App;
