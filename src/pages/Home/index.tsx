@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useRef, useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { PaginationItem, Pagination, Box } from '@mui/material';
@@ -12,6 +12,7 @@ import { useCharacterContext } from '@/context/character';
 import NotFound from '@/components/NotFound';
 import LoadingCharacterGrid from '@/components/LoadingCharacterGrid';
 import CharacterItem from '@/components/CharacterItem';
+import SearchInput from '@/components/SearchInput';
 
 import rickAndMorty from '@/assets/background.png';
 
@@ -21,6 +22,8 @@ const Home = () => {
   const [timeout, setTimeoutToDelay] = useState(setTimeout(() => {}, 0));
   const { error, loading, searchByName, searchByPage, characters, pageInfo } =
         useCharacterContext();
+
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = useCallback(
     ({ target: { value } }) => {
@@ -43,8 +46,8 @@ const Home = () => {
   );
 
   useEffect(() => {
-    console.log('loading', loading);
-  }, [loading]);
+    inputRef.current?.focus();
+  }, []);
 
   return (
         <>
@@ -55,11 +58,7 @@ const Home = () => {
 
             <Form hasError={!!error} onSubmit={(e) => e.preventDefault()}>
                 <img src={rickAndMorty} alt="Search Image" loading="eager" />
-                <input
-                    onChange={handleChange}
-                    type="text"
-                    placeholder="Digite o nome do personagem"
-                />
+                <SearchInput onChange={handleChange} ref={inputRef} />
             </Form>
 
             {error && <NotFound message={error} />}
