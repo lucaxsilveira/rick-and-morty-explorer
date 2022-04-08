@@ -4,7 +4,7 @@ import { useCharacterContext } from '@/context/character';
 
 const Character = () => {
   const { id } = useParams<{ id: string }>();
-  const { getById, loading, error, character } = useCharacterContext();
+  const { getById, character } = useCharacterContext();
 
   useEffect(() => {
     if (id) {
